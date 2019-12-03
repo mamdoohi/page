@@ -13,9 +13,12 @@ class CreateSitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sites', function (Blueprint $table) {
+        Schema::create('Sites', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('url');
+            $table->integer('visitedOtherSite');
+            $table->integer('visitedMe');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateSitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sites');
+        Schema::dropIfExists('Sites');
     }
 }
