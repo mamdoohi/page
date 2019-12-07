@@ -13,10 +13,10 @@ class CreateBrowsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('Browsers', function (Blueprint $table) {
+        Schema::create('browsers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('userAgent');
+            $table->string('user_agent');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateBrowsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Browsers');
+        Schema::dropIfExists('browsers');
     }
 }

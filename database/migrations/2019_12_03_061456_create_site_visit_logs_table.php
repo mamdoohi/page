@@ -13,14 +13,14 @@ class CreateSiteVisitLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('SiteVisitLogs', function (Blueprint $table) {
+        Schema::create('site_visit_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('ip');
-            $table->integer('visitedSiteId');
-            $table->integer('visitorSiteId');
-            $table->integer('totalVisit');
-            $table->integer('browserId');
+            $table->integer('visited_site_id');
+            $table->integer('visitor_site_id');
+            $table->integer('total_visit');
+            $table->integer('browser_id');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateSiteVisitLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('SiteVisitLogs');
+        Schema::dropIfExists('site_visit_logs');
     }
 }
