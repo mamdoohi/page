@@ -14,5 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::post('/visit', function (Request $request) {
-    return $request->user();
+
+    return \App\Sites::orderBy(DB::raw("`visited_other_site` - `visited_me`"), 'desc')->first();
 });

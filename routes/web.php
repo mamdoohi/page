@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/visit/{id}', function () {
+    return view('view_site');
+})->name('visit');
+
 Route::post('/', function () {
     request()->validate([
         'site' => 'url|required|max:255',
@@ -29,5 +33,6 @@ Route::post('/', function () {
         $row->visited_me = 0;
         $row->save();
     }
-    return view('view_site');
+    return redirect()->route('visit', ['id' => $row->id]);
+    //return view('view_site');
 });
