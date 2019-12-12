@@ -17,7 +17,7 @@
 <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 <script>
 
-    var interval = 40000;
+    var interval = 1000;
     let currentSite = {};
 
     function loadNewSite() {
@@ -27,9 +27,8 @@
             type: "POST",
             dataType: 'json',
             contentType: "application/json",
-            data: JSON.stringify(model),
+            data: JSON.stringify(currentSite),
             success: function (results) {
-                console.log(results);
                 currentSite = results;
             },
             complete: function () {
