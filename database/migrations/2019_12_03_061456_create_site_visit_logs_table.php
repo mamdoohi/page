@@ -19,8 +19,8 @@ class CreateSiteVisitLogsTable extends Migration
             $table->string('ip');
             $table->integer('visited_site_id');
             $table->integer('visitor_site_id');
-            $table->integer('total_visit');
-            $table->integer('browser_id');
+            $table->integer('total_visit')->nullable();
+            $table->integer('browser_id')->nullable();
         });
     }
 
